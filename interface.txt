@@ -1,0 +1,306 @@
+ signIn(로그인)
+
+ - request 
+ {
+    *email : String,
+    *password : String
+ }
+
+ - response
+
+ 성공 
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    token: "jwt...",
+    expiredDate : 123456789
+ }
+
+ 실패
+
+ - 필수정보 미입력
+
+ - 로그인실패
+ Http Status -  401(Unauthorized)
+ {
+    code : "SF",
+    messege : "Sign in Failed"
+ }
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+ ===================================
+
+ singUp(회원가입)
+
+ - request 
+ {
+    *email : String,
+    *password : String,
+    *nickname : String,
+    *telNumber : String,
+    *adress : String,
+    adressDetail : String
+ }
+
+ -response
+
+ 성공 
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+ }
+
+ 실패
+
+ - 필수정보 미입력 / 이메일 포멧 불일치 / 비밀번호 8자 미만 / 전화번호 포멧 불일치 / 
+
+ - 이메일 중복
+ Http Status -  400(Bad Request)
+ {
+    code : "EE",
+    messege : "Existed Email"
+ }
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+ 
+
+ ===================================
+ weeklyTop3List(주간 상위 3 게시물리스트)
+
+ - response
+ 
+ 성공 
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    top3List : BoardListItem[]
+ }
+ 
+ BoardListItem
+ {  
+    boardNumber : init,
+    title : String,
+    content : String,
+    boderTitleImage : String
+    favoriteCount : init,
+    commentCount : init,
+    viewCount : init
+    writeDatetime : String,
+    writerNicname : String,
+    writerProfileImage : String
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+
+ ===================================
+ currentList(최신게시물리스트)
+
+ - response
+ 
+ 성공 
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    currentList : BoardListItem[]
+ }
+ 
+ BoardListItem
+ {  
+    boardNumber : init,
+    title : String,
+    content : String,
+    boderTitleImage : String
+    favoriteCount : init,
+    commentCount : init,
+    viewCount : init
+    writeDatetime : String,
+    writerNicname : String,
+    writerProfileImage : String
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+ 
+ ===================================
+ popularWordList(인기 검색어 리스트)
+
+ -response
+
+ 성공
+
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    popularWordList : Stirng[]
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+ ===================================
+ searchList(검색게시물리스트)
+
+- response
+ 
+ 성공 
+
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    searchList : BoardListItem[]
+ }
+ 
+ BoardListItem
+ {  
+    boardNumber : init,
+    title : String,
+    content : String,
+    boderTitleImage : String
+    favoriteCount : init,
+    commentCount : init,
+    viewCount : init
+    writeDatetime : String,
+    writerNicname : String,
+    writerProfileImage : String
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+ ===================================
+ relativeWordList(관련 검색어 리스트)
+
+ -response
+
+ 성공
+
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    relativeWordList : Stirng[]
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+ ===================================
+ boardDetail(게시글 상세)
+
+ ===================================
+ favoriteList(좋아요 리스트)
+
+ ===================================
+ favorite(좋아요 기능)
+
+ ===================================
+ commentList(댓글 리스트)
+
+ ===================================
+ postComment(댓글쓰기)
+
+ ===================================
+ boardDetail(게시글 삭제)
+
+ ===================================
+ boardWrite(게시물 쓰기)
+
+ ===================================
+ boardUpdate(게시물 수정)
+
+ ===================================
+ getUser(유저정보)
+
+ ===================================
+ UserBoardList(특정 유저 게시물 리스트)
+
+ - response
+ 
+ 성공 
+
+ Http Status - 200(OK)
+ {
+    code : "SU",
+    messege : "Success.",
+    UserBoardList : BoardListItem[]
+ }
+ 
+ BoardListItem
+ {  
+    boardNumber : init,
+    title : String,
+    content : String,
+    boderTitleImage : String
+    favoriteCount : init,
+    commentCount : init,
+    viewCount : init
+    writeDatetime : String,
+    writerNicname : String,
+    writerProfileImage : String
+ }
+
+ 실패
+
+ - 데이터베이스 에러
+ Http Status - 500(Internal Server Error)
+ {
+    code: "DE"
+    messege : "Database Error
+ }
+
+ ===================================
+ fileUpload (파일업로드)
+
+ ===================================
+ getFile(파일 불러오기)
+ 
+ ===================================
+
